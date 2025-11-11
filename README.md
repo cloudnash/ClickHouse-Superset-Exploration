@@ -98,6 +98,7 @@ clickhouse+native://default:@localhost:9000/default
 
 ```
 
+**IMAGES IN SCREENSHOTS FOLDER*
 
 Challenges & how I overcame them:
 - Common issue: missing ClickHouse driver for SQLAlchemy. Fixed by installing `clickhouse-driver` & `clickhouse-sqlalchemy` into the same Python env as Superset.
@@ -118,6 +119,9 @@ Overall impressions:
 ### Author
 
 Nashit Ahmad
+
 AWS & DevOps | Cloud Learner | Exploring Data Tools
+
 emailID: nashitakerfeldt@gmail.com
+
 LinkedIn: https://in.linkedin.com/in/nashitahmad
