@@ -86,6 +86,18 @@ SELECT * FROM web_logs;
 - Performance-oriented features like MergeTree engine
 - Data compression and optimization concepts
 
+## Superset (Optional)
+If Superset is installed successfully:
+```
+superset db upgrade
+superset fab create-admin
+superset init
+superset run -h 0.0.0.0 -p 8088
+
+clickhouse+native://default:@localhost:9000/default
+
+```
+
 
 Challenges & how I overcame them:
 - Common issue: missing ClickHouse driver for SQLAlchemy. Fixed by installing `clickhouse-driver` & `clickhouse-sqlalchemy` into the same Python env as Superset.
@@ -93,6 +105,19 @@ Challenges & how I overcame them:
 - If the Superset server binds to 127.0.0.1 only, use `--host 0.0.0.0` with `superset run` or ensure security groups allow access.
 - pandas failed to build from source. Resolved by installing `python3-dev libatlas-base-dev libopenblas-dev liblapack-dev gfortran`
 
+## Key Takeaways
+ClickHouse is extremely fast and efficient for analytics workloads.
+Superset offers powerful visualization capabilities once configured. 
+Adapting to environment constraints and using alternative tools shows real-world problem-solving.
+
 Overall impressions:
 - ClickHouse: extremely fast for analytical queries; straightforward to experiment with codecs and MergeTree settings.
 - Superset: good low-code visualization layer; simple to connect to ClickHouse once drivers are installed. UI is feature-rich but can be sensitive to environment mismatches (Python deps).
+
+
+### Author
+
+Nashit Ahmad
+AWS & DevOps | Cloud Learner | Exploring Data Tools
+emailID: nashitakerfeldt@gmail.com
+LinkedIn: https://in.linkedin.com/in/nashitahmad
