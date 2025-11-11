@@ -47,7 +47,7 @@ clickhouse-superset-exploration/
 ```
 ## ⚙️ Setup Steps
 
-### 1️⃣ Launch EC2 and install dependencies
+### Launch EC2 and install dependencies
 
 ```
 sudo apt update
