@@ -49,7 +49,7 @@ Challenges & how I overcame them:
 - Common issue: missing ClickHouse driver for SQLAlchemy. Fixed by installing `clickhouse-driver` & `clickhouse-sqlalchemy` into the same Python env as Superset.
 - Superset may fail if system packages missing (wheel/build tools). Resolved by installing `build-essential`, `python3-dev`, `libssl-dev`, `libffi-dev`.
 - If the Superset server binds to 127.0.0.1 only, use `--host 0.0.0.0` with `superset run` or ensure security groups allow access.
-- pandas failed to build from source. Resolved by installing 
+- pandas failed to build from source. Resolved by installing `python3-dev libatlas-base-dev libopenblas-dev liblapack-dev gfortran`
 
 Overall impressions:
 - ClickHouse: extremely fast for analytical queries; straightforward to experiment with codecs and MergeTree settings.
