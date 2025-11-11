@@ -3,6 +3,10 @@
 Title: ClickHouse + Superset Exploration
 Date: 11-11-2025
 
+## Overview
+This project demonstrates an end-to-end exploration of **ClickHouse** (for high-performance data storage and querying) and **Apache Superset** (for data visualization and dashboards).  
+Due to resource constraints, lightweight Python-based visualizations using **Pandas** and **Matplotlib** were also implemented as an alternative visualization method.
+
 Environment:
 - EC2: Ubuntu 22.04, t3.medium
 - ClickHouse: installed from official repo
@@ -41,8 +45,46 @@ clickhouse-superset-exploration/
 └── ClickHouse_Superset_Report.md
 
 ```
+## ⚙️ Setup Steps
+
+### 1️⃣ Launch EC2 and install dependencies
+
+```
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip clickhouse-server clickhouse-client
+sudo systemctl start clickhouse-server
+
+clickhouse-client
 
 
+CREATE TABLE web_logs
+(
+    ts DateTime,
+    user_id UInt32,
+    url String,
+    bytes UInt32,
+    status UInt16
+)
+ENGINE = MergeTree()
+ORDER BY ts;
+
+INSERT INTO web_logs VALUES
+(now(), 101, '/home', 1024, 200),
+(now()-3600, 101, '/product', 2048, 200),
+(now()-7200, 102, '/cart', 512, 500),
+(now()-10000, 103, '/checkout', 4096, 302);
+
+SELECT * FROM web_logs;
+
+```
+
+## ClickHouse Exploration
+
+- Features explored
+- Table creation and insertion
+- Basic querying (SELECT, COUNT, GROUP BY)
+- Performance-oriented features like MergeTree engine
+- Data compression and optimization concepts
 
 
 Challenges & how I overcame them:
