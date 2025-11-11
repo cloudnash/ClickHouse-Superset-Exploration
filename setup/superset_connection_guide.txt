@@ -1,0 +1,9 @@
+Superset Connection Guide for ClickHouse
+
+1. Go to Superset UI → Data → Databases → + Database
+2. Select ClickHouse as the database type
+3. Enter SQLAlchemy URI:
+   clickhouse+native://default:@localhost:9000/demo
+4. Test the connection
+5. Save and create a dataset from the table web_logs
+6. Start creating charts using this dataset
